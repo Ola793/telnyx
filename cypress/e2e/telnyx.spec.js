@@ -22,7 +22,7 @@ describe("telnyx check", () => {
     mainPage.acceptCookies.should("be.visible").click();
   });
 
-  it.skip("sign up check", () => {
+  it("sign up check", () => {
     mainPage.title.should("have.text", "Modular, resilient communications and connectivity");
 
     mainPage.signUpButton.should("be.visible").click();
@@ -81,6 +81,8 @@ describe("telnyx check", () => {
 
     loginPage.emailInput.should("be.visible").type(email).should("have.attr", "aria-invalid", "false");
 
+    cy.wait(5000);
+
     loginPage.labelForPassword.should("be.visible").should("have.text", "Password *");
 
     loginPage.passwordInput.should("be.visible").type(password).should("have.attr", "aria-invalid", "false");
@@ -104,7 +106,7 @@ describe("telnyx check", () => {
     // loginPage.title.should("be.visible").should("have.text", "Log in");
   });
 
-  it.skip("password reset", () => {
+  it("password reset", () => {
     mainPage.loginButton.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 
     loginPage.title.should("be.visible").should("have.text", "Log in");
@@ -122,8 +124,10 @@ describe("telnyx check", () => {
     loginPage.resetMessage.should("be.visible").should("have.text", "We have accepted your password reset request. If you have a Telnyx account and are unable to reset your password successfully, please contact support for assistance.");
   });
 
-  it.skip("sign up for our marketing newsletter", () => {
+  it("sign up for our marketing newsletter", () => {
     mainPage.connectWithUs.scrollIntoView().should("be.visible", { timeout: 15000 });
+
+    cy.wait(5000);
 
     mainPage.emailInput.should("be.visible").should("have.attr", "placeholder", "Enter business email").type(email).focus().should("have.css", "border-color", "rgb(0, 163, 122)");
 
@@ -132,8 +136,10 @@ describe("telnyx check", () => {
     signUpPage.title.should("have.text", "Create a Telnyx account");
   });
 
-  it.skip("check LinkedIn redirecting", () => {
+  it("check LinkedIn redirecting", () => {
     mainPage.socialMedia.scrollIntoView().should("be.visible", { timeout: 15000 });
+
+    cy.wait(5000);
 
     mainPage.linkedIn.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 
@@ -142,7 +148,7 @@ describe("telnyx check", () => {
     });
   });
 
-  it.skip("check X redirecting", () => {
+  it("check X redirecting", () => {
     mainPage.socialMedia.scrollIntoView().should("be.visible", { timeout: 15000 });
 
     mainPage.X.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
@@ -152,7 +158,7 @@ describe("telnyx check", () => {
     });
   });
 
-  it.skip("check Facebook redirecting", () => {
+  it("check Facebook redirecting", () => {
     mainPage.socialMedia.scrollIntoView().should("be.visible", { timeout: 15000 });
 
     mainPage.fB.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
@@ -162,13 +168,13 @@ describe("telnyx check", () => {
     });
   });
 
-  it.skip("check solutions link", () => {
+  it("check solutions link", () => {
     mainPage.solutionsLink.should("be.visible").click();
 
     mainPage.solutionsLink.should("be.visible").should("have.text", "Solutions");
   });
 
-  it.skip("check return to main page", () => {
+  it("check return to main page", () => {
     mainPage.solutionsLink.should("be.visible").click();
 
     mainPage.solutionsLink.should("be.visible").should("have.text", "Solutions");
