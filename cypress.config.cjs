@@ -1,10 +1,20 @@
-const { defineConfig } = require("cypress");
-require("dotenv").config();
+const { defineConfig } = require('cypress');
+const mochawesome = require('cypress-mochawesome-reporter/plugin');
+
+
+require('dotenv').config();
 
 module.exports = defineConfig({
  e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+    },
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/results',
+      overwrite: false,
+      html: false,
+      json: true,
     },
     env: {
       emailForSignUp: process.env.CYPRESS_EMAIL_FOR_SIGNUP,
@@ -24,7 +34,4 @@ module.exports = defineConfig({
   requestTimeout: 10000,         // default 5000
   responseTimeout: 30000,         // default 30000
   // watchForFileChanges: false,
-  // env: {
-  //   password: process.env.PASS
-  // }
 });

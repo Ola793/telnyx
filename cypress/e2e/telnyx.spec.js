@@ -45,7 +45,7 @@ describe("telnyx check", () => {
 
     cy.wait(5000);
 
-    // signUpPage.lastStep.should("have.text", "One last step");
+    signUpPage.lastStep.should("have.text", "One last step");
   });
 
   it("log in check", () => {
@@ -65,14 +65,14 @@ describe("telnyx check", () => {
 
     loginPage.loginButton.should("be.visible").should("be.enabled").click();
 
-    // homePage.title.should("have.text", "Log in");
+    homePage.title.should("have.text", "Log in");
 
-    // homePage.setUpLater.should("be.visible").should("have.text", "Set Up Later").click();
+    homePage.setUpLater.should("be.visible").should("have.text", "Set Up Later").click();
 
-    // homePage.welcomeTitle.should("be.visible").should("have.text", "Welcome to Telnyx!");
+    homePage.welcomeTitle.should("be.visible").should("have.text", "Welcome to Telnyx!");
   });
 
-  it.skip("log out check", () => {
+  it("log out check", () => {
     mainPage.loginButton.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 
     cy.url().should("include", "/login/sign-in");
@@ -91,21 +91,21 @@ describe("telnyx check", () => {
 
     loginPage.loginButton.should("be.visible").should("be.enabled").click();
 
-    // cy.wait(5000);
+    cy.wait(5000);
 
-    // homePage.title.should("have.text", "Log in");
+    homePage.title.should("have.text", "Log in");
 
-    // homePage.setUpLater.should("be.visible").should("have.text", "Set Up Later").click();
+    homePage.setUpLater.should("be.visible").should("have.text", "Set Up Later").click();
 
-    // homePage.welcomeTitle.should("be.visible").should("have.text", "Welcome to Telnyx!");
+    homePage.welcomeTitle.should("be.visible").should("have.text", "Welcome to Telnyx!");
 
-    // homePage.avatarCircle.should("be.visible").trigger("mouseover");
+    homePage.avatarCircle.should("be.visible").trigger("mouseover");
 
-    // homePage.dropDownMenu.should("be.visible");
+    homePage.dropDownMenu.should("be.visible");
 
-    // homePage.signOutLink.should("be.visible").click();
+    homePage.signOutLink.should("be.visible").click();
 
-    // loginPage.title.should("be.visible").should("have.text", "Log in");
+    loginPage.title.should("be.visible").should("have.text", "Log in");
   });
 
   it("password reset", () => {

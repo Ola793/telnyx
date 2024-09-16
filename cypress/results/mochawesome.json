@@ -1,0 +1,297 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 5,
+    "pending": 0,
+    "failures": 5,
+    "start": "2024-09-16T21:36:06.820Z",
+    "end": "2024-09-16T21:40:17.258Z",
+    "duration": 250438,
+    "testsRegistered": 10,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f8dc7dc1-3397-438a-a771-23e3b9dc2470",
+      "title": "",
+      "fullFile": "cypress\\e2e\\telnyx.spec.js",
+      "file": "cypress\\e2e\\telnyx.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+          "title": "telnyx check",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "sign up check",
+              "fullTitle": "telnyx check sign up check",
+              "timedOut": null,
+              "duration": 30181,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.title.should(\"have.text\", \"Modular, resilient communications and connectivity\");\nmainPage.signUpButton.should(\"be.visible\").click();\nsignUpPage.title.should(\"have.text\", \"Create a Telnyx account\");\nsignUpPage.emailInput.type(emailForSignUp).focus().should(\"have.css\", \"border-color\", \"rgb(0, 163, 122)\");\ncy.wait(5000);\nsignUpPage.firstNameInput.type(firstName).focus().should(\"have.css\", \"border-color\", \"rgb(0, 163, 122)\");\nsignUpPage.lastNameInput.type(lastName).focus().should(\"have.css\", \"border-color\", \"rgb(0, 163, 122)\");\nsignUpPage.passwordInput.type(passwordForSignUp).focus().should(\"have.css\", \"border-color\", \"rgb(0, 163, 122)\");\nsignUpPage.agreementCheckBox.click();\nsignUpPage.submitButton.should(\"be.enabled\").click();\ncy.wait(5000);\nsignUpPage.lastStep.should(\"have.text\", \"One last step\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: Expected to find element: `h1 span.c-PJLV`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 5000ms: Expected to find element: `h1 span.c-PJLV`, but never found it.\n    at Context.eval (webpack://telnyx.com/./cypress/e2e/telnyx.spec.js:48:24)",
+                "diff": null
+              },
+              "uuid": "9a22be7c-0162-4575-a09f-e804a5936c95",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "log in check",
+              "fullTitle": "telnyx check log in check",
+              "timedOut": null,
+              "duration": 44950,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.loginButton.should(\"be.visible\").should(\"have.attr\", \"target\", \"_blank\").invoke(\"removeAttr\", \"target\").click();\ncy.url().should(\"include\", \"/login/sign-in\");\nloginPage.title.should(\"be.visible\").should(\"have.text\", \"Log in\");\nloginPage.labelForEmail.should(\"be.visible\").should(\"have.text\", \"Business Email *\");\nloginPage.emailInput.should(\"be.visible\").type(email).should(\"have.attr\", \"aria-invalid\", \"false\");\nloginPage.labelForPassword.should(\"be.visible\").should(\"have.text\", \"Password *\");\nloginPage.passwordInput.should(\"be.visible\").type(password).should(\"have.attr\", \"aria-invalid\", \"false\");\nloginPage.loginButton.should(\"be.visible\").should(\"be.enabled\").click();\nhomePage.title.should(\"have.text\", \"Log in\");\nhomePage.setUpLater.should(\"be.visible\").should(\"have.text\", \"Set Up Later\").click();\nhomePage.welcomeTitle.should(\"be.visible\").should(\"have.text\", \"Welcome to Telnyx!\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: expected '[ <a.frontend-customer-portal-1l0ohas>, 1 more... ]' to have text 'Set Up Later', but the text was 'Sign upResend'",
+                "estack": "AssertionError: Timed out retrying after 5000ms: expected '[ <a.frontend-customer-portal-1l0ohas>, 1 more... ]' to have text 'Set Up Later', but the text was 'Sign upResend'\n    at Context.eval (webpack://telnyx.com/./cypress/e2e/telnyx.spec.js:70:45)",
+                "diff": "- 'Sign upResend'\n+ 'Set Up Later'\n"
+              },
+              "uuid": "0e316127-5f65-440e-a862-7f6d58cecf1d",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "log out check",
+              "fullTitle": "telnyx check log out check",
+              "timedOut": null,
+              "duration": 33952,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.loginButton.should(\"be.visible\").should(\"have.attr\", \"target\", \"_blank\").invoke(\"removeAttr\", \"target\").click();\ncy.url().should(\"include\", \"/login/sign-in\");\nloginPage.title.should(\"be.visible\").should(\"have.text\", \"Log in\");\nloginPage.labelForEmail.should(\"be.visible\").should(\"have.text\", \"Business Email *\");\nloginPage.emailInput.should(\"be.visible\").type(email).should(\"have.attr\", \"aria-invalid\", \"false\");\ncy.wait(5000);\nloginPage.labelForPassword.should(\"be.visible\").should(\"have.text\", \"Password *\");\nloginPage.passwordInput.should(\"be.visible\").type(password).should(\"have.attr\", \"aria-invalid\", \"false\");\nloginPage.loginButton.should(\"be.visible\").should(\"be.enabled\").click();\ncy.wait(5000);\nhomePage.title.should(\"have.text\", \"Log in\");\nhomePage.setUpLater.should(\"be.visible\").should(\"have.text\", \"Set Up Later\").click();\nhomePage.welcomeTitle.should(\"be.visible\").should(\"have.text\", \"Welcome to Telnyx!\");\nhomePage.avatarCircle.should(\"be.visible\").trigger(\"mouseover\");\nhomePage.dropDownMenu.should(\"be.visible\");\nhomePage.signOutLink.should(\"be.visible\").click();\nloginPage.title.should(\"be.visible\").should(\"have.text\", \"Log in\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: expected '[ <a.frontend-customer-portal-1l0ohas>, 1 more... ]' to have text 'Set Up Later', but the text was 'Sign upResend'",
+                "estack": "AssertionError: Timed out retrying after 5000ms: expected '[ <a.frontend-customer-portal-1l0ohas>, 1 more... ]' to have text 'Set Up Later', but the text was 'Sign upResend'\n    at Context.eval (webpack://telnyx.com/./cypress/e2e/telnyx.spec.js:98:45)",
+                "diff": "- 'Sign upResend'\n+ 'Set Up Later'\n"
+              },
+              "uuid": "9d65f5ff-fec6-44bf-8a22-007e24cc3372",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "password reset",
+              "fullTitle": "telnyx check password reset",
+              "timedOut": null,
+              "duration": 17683,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.loginButton.should(\"be.visible\").should(\"have.attr\", \"target\", \"_blank\").invoke(\"removeAttr\", \"target\").click();\nloginPage.title.should(\"be.visible\").should(\"have.text\", \"Log in\");\nloginPage.forgotPassword.should(\"be.visible\").should(\"have.text\", \"Forgot your password?\").click();\nloginPage.passwordReset.should(\"be.visible\").should(\"have.text\", \"Password Reset\");\nloginPage.labelForEmail.should(\"be.visible\").should(\"have.text\", \"Your Email Address *\");\nloginPage.emailInput.should(\"be.visible\").type(email).should(\"have.attr\", \"aria-invalid\", \"false\");\nloginPage.resetButton.should(\"be.visible\").should(\"be.enabled\").click();\nloginPage.resetMessage.should(\"be.visible\").should(\"have.text\", \"We have accepted your password reset request. If you have a Telnyx account and are unable to reset your password successfully, please contact support for assistance.\");",
+              "err": {},
+              "uuid": "97b1f38c-dbdc-462f-a1e2-ee3decc710e4",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "sign up for our marketing newsletter",
+              "fullTitle": "telnyx check sign up for our marketing newsletter",
+              "timedOut": null,
+              "duration": 11183,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.connectWithUs.scrollIntoView().should(\"be.visible\", {\n  timeout: 15000\n});\ncy.wait(5000);\nmainPage.emailInput.should(\"be.visible\").should(\"have.attr\", \"placeholder\", \"Enter business email\").type(email).focus().should(\"have.css\", \"border-color\", \"rgb(0, 163, 122)\");\nmainPage.submitButton.should(\"be.visible\").should(\"be.enabled\").click();\nsignUpPage.title.should(\"have.text\", \"Create a Telnyx account\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: expected '<h2.c-PJLV.c-fKwEGa.c-PJLV-jgSmhu-alt-true.c-PJLV-ihBhmYj-css>' to be 'visible'\n\nThis element `<h2.c-PJLV.c-fKwEGa.c-PJLV-jgSmhu-alt-true.c-PJLV-ihBhmYj-css>` is not visible because its content is being clipped by one of its parent elements, which has a CSS property of overflow: `hidden`, `scroll` or `auto`",
+                "estack": "AssertionError: Timed out retrying after 5000ms: expected '<h2.c-PJLV.c-fKwEGa.c-PJLV-jgSmhu-alt-true.c-PJLV-ihBhmYj-css>' to be 'visible'\n\nThis element `<h2.c-PJLV.c-fKwEGa.c-PJLV-jgSmhu-alt-true.c-PJLV-ihBhmYj-css>` is not visible because its content is being clipped by one of its parent elements, which has a CSS property of overflow: `hidden`, `scroll` or `auto`\n    at Context.eval (webpack://telnyx.com/./cypress/e2e/telnyx.spec.js:130:44)",
+                "diff": null
+              },
+              "uuid": "a3d56865-8f8b-4674-91c9-3fcd55dc033f",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check LinkedIn redirecting",
+              "fullTitle": "telnyx check check LinkedIn redirecting",
+              "timedOut": null,
+              "duration": 26483,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.socialMedia.scrollIntoView().should(\"be.visible\", {\n  timeout: 15000\n});\ncy.wait(5000);\nmainPage.linkedIn.should(\"be.visible\").should(\"have.attr\", \"target\", \"_blank\").invoke(\"removeAttr\", \"target\").click();\ncy.origin(\"https://www.linkedin.com\", () => {\n  cy.url().should(\"include\", \"linkedin.com/company/telnyx/\", {\n    timeout: 15000\n  });\n});",
+              "err": {},
+              "uuid": "d6cd9d6f-c95d-44bb-a656-062c0ce107ec",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check X redirecting",
+              "fullTitle": "telnyx check check X redirecting",
+              "timedOut": null,
+              "duration": 24858,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.socialMedia.scrollIntoView().should(\"be.visible\", {\n  timeout: 15000\n});\nmainPage.X.should(\"be.visible\").should(\"have.attr\", \"target\", \"_blank\").invoke(\"removeAttr\", \"target\").click();\ncy.origin(\"https://x.com/telnyx\", () => {\n  cy.url().should(\"include\", \"x.com/telnyx\", {\n    timeout: 15000\n  });\n});",
+              "err": {},
+              "uuid": "16cfca64-5e61-4e1a-a0e9-0c2ff2d19de4",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check Facebook redirecting",
+              "fullTitle": "telnyx check check Facebook redirecting",
+              "timedOut": null,
+              "duration": 20495,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.socialMedia.scrollIntoView().should(\"be.visible\", {\n  timeout: 15000\n});\nmainPage.fB.should(\"be.visible\").should(\"have.attr\", \"target\", \"_blank\").invoke(\"removeAttr\", \"target\").click();\ncy.origin(\"https://www.facebook.com/Telnyx/\", () => {\n  cy.url().should(\"include\", \"facebook.com/Telnyx/\", {\n    timeout: 15000\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: expected '<ul.c-ejcPbY>' to be 'visible'\n\nThis element `<ul.c-ejcPbY>` is not visible because its content is being clipped by one of its parent elements, which has a CSS property of overflow: `hidden`, `scroll` or `auto`",
+                "estack": "AssertionError: Timed out retrying after 5000ms: expected '<ul.c-ejcPbY>' to be 'visible'\n\nThis element `<ul.c-ejcPbY>` is not visible because its content is being clipped by one of its parent elements, which has a CSS property of overflow: `hidden`, `scroll` or `auto`\n    at Context.eval (webpack://telnyx.com/./cypress/e2e/telnyx.spec.js:164:42)",
+                "diff": null
+              },
+              "uuid": "53ac94fc-ac5a-46b8-b03b-9e369e452eea",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check solutions link",
+              "fullTitle": "telnyx check check solutions link",
+              "timedOut": null,
+              "duration": 11924,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.solutionsLink.should(\"be.visible\").click();\nmainPage.solutionsLink.should(\"be.visible\").should(\"have.text\", \"Solutions\");",
+              "err": {},
+              "uuid": "3081e62f-34ce-445e-9ec4-7e56db705246",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check return to main page",
+              "fullTitle": "telnyx check check return to main page",
+              "timedOut": null,
+              "duration": 18922,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "mainPage.solutionsLink.should(\"be.visible\").click();\nmainPage.solutionsLink.should(\"be.visible\").should(\"have.text\", \"Solutions\");\nmainPage.logo.find(\"a[href='/']\").should(\"exist\").click();",
+              "err": {},
+              "uuid": "908232ea-3a22-40da-a2e5-92c21b2994ff",
+              "parentUUID": "676c7977-ee9b-4836-a53e-8c0a1a106149",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "97b1f38c-dbdc-462f-a1e2-ee3decc710e4",
+            "d6cd9d6f-c95d-44bb-a656-062c0ce107ec",
+            "16cfca64-5e61-4e1a-a0e9-0c2ff2d19de4",
+            "3081e62f-34ce-445e-9ec4-7e56db705246",
+            "908232ea-3a22-40da-a2e5-92c21b2994ff"
+          ],
+          "failures": [
+            "9a22be7c-0162-4575-a09f-e804a5936c95",
+            "0e316127-5f65-440e-a862-7f6d58cecf1d",
+            "9d65f5ff-fec6-44bf-8a22-007e24cc3372",
+            "a3d56865-8f8b-4674-91c9-3fcd55dc033f",
+            "53ac94fc-ac5a-46b8-b03b-9e369e452eea"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 240631,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

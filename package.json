@@ -3,13 +3,37 @@
   "version": "1.0.0",
   "description": "10 test cases for telnyx.com",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "cy:open": "cypress open"
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "cy:e2e-tests": "npx cypress run -s 'cypress/e2e/*.spec.js' --browser chrome",
+    "reports:merge": "npx mochawesome-merge 'cypress/results/*.json' -o 'mochawesome-report\\mochawesome.json'",
+    "report:html": "npx marge mochawesome-report\\mochawesome.json",
+    "report:all": "npm run reports:merge && npm run report:html",
+    "reports:delete": "rmdir /S /Q cypress\\results && mkdir cypress\\results && rmdir /S /Q mochawesome-report",
+    "cy:run:report": "npm run reports:delete && npm run cy:e2e-tests && npm run report:all"
+  },
+  "mocha": {
+    "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportDir": "cypress/reports",
+      "reportFilename": "report",
+      "quiet": true,
+      "overwrite": false
+    }
   },
   "author": "Olha Teplova",
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.14.2",
     "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mocha": "^10.7.3",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
