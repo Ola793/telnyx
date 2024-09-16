@@ -31,6 +31,8 @@ describe("telnyx check", () => {
 
     signUpPage.emailInput.type(emailForSignUp).focus().should("have.css", "border-color", "rgb(0, 163, 122)");
 
+    cy.wait(5000);
+
     signUpPage.firstNameInput.type(firstName).focus().should("have.css", "border-color", "rgb(0, 163, 122)");
 
     signUpPage.lastNameInput.type(lastName).focus().should("have.css", "border-color", "rgb(0, 163, 122)");
