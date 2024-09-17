@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "run-script-os",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "cy:e2e-tests": "npx cypress run -s 'cypress/e2e/*.spec.js' --browser chrome",
