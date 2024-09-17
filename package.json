@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "start": "run-script-os",
-    "test": "ng test",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "cy:e2e-tests": "npx cypress run -s 'cypress/e2e/*.spec.js' --browser chrome",
@@ -37,6 +36,7 @@
     "mocha": "^10.7.3",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome-report-generator": "^6.2.0",
+    "start-server-and-test": "^2.0.8"
   }
 }
