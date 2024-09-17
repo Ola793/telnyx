@@ -1,7 +1,6 @@
 const { defineConfig } = require('cypress');
 const mochawesome = require('cypress-mochawesome-reporter/plugin');
 
-
 require('dotenv').config();
 
 module.exports = defineConfig({
@@ -17,10 +16,10 @@ module.exports = defineConfig({
       json: true,
     },
     env: {
-      emailForSignUp: process.env.CYPRESS_EMAIL_FOR_SIGNUP,
-      passwordForSignUp: process.env.CYPRESS_PASSWORD_FOR_SIGNUP,
-      email: process.env.CYPRESS_EMAIL,
-      password: process.env.CYPRESS_PASSWORD
+      emailForSignUp: process.env.EMAIL_FOR_SIGNUP,
+      passwordForSignUp: process.env.PASSWORD_FOR_SIGNUP,
+      email: process.env.EMAIL,
+      password: process.env.PASSWORD
     },
     // baseUrl: 'http://localhost:4200',
     specPattern: 'cypress/e2e/**/*.spec.{js,jsx,ts,tsx}'
