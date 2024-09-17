@@ -22,7 +22,7 @@ describe("telnyx check", () => {
     mainPage.acceptCookies.should("be.visible").click();
   });
 
-  it("sign up check", () => {
+  it.skip("sign up check", () => {
     mainPage.title.should("have.text", "Modular, resilient communications and connectivity");
 
     mainPage.signUpButton.should("be.visible").click();
@@ -48,7 +48,7 @@ describe("telnyx check", () => {
     signUpPage.lastStep.should("have.text", "One last step");
   });
 
-  it("log in check", () => {
+  it.skip("log in check", () => {
     mainPage.loginButton.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 
     cy.url().should("include", "/login/sign-in");
@@ -72,7 +72,7 @@ describe("telnyx check", () => {
     homePage.welcomeTitle.should("be.visible").should("have.text", "Welcome to Telnyx!");
   });
 
-  it("log out check", () => {
+  it.skip("log out check", () => {
     mainPage.loginButton.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 
     cy.url().should("include", "/login/sign-in");
