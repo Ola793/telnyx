@@ -127,19 +127,21 @@ describe("telnyx check", () => {
   });
 
   it("sign up for our marketing newsletter", () => {
-    mainPage.connectWithUs.scrollIntoView().should("be.visible", { timeout: 15000 });
+    cy.get("body").invoke("css", "overflow", "visible");
 
-    cy.wait(5000);
+    mainPage.connectWithUs.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible");
 
     mainPage.emailInput.should("be.visible").should("have.attr", "placeholder", "Enter business email").type(email).focus().should("have.css", "border-color", "rgb(0, 163, 122)");
 
     mainPage.submitButton.should("be.visible").should("be.enabled").click();
 
     signUpPage.title.should("have.text", "Create a Telnyx account");
+
+    cy.get("body").invoke("css", "overflow", "");
   });
 
   it("check LinkedIn redirecting", () => {
-    mainPage.socialMedia.scrollIntoView().should("be.visible", { timeout: 15000 });
+    mainPage.socialMedia.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 15000 });
 
     cy.wait(5000);
 
@@ -151,7 +153,7 @@ describe("telnyx check", () => {
   });
 
   it("check X redirecting", () => {
-    mainPage.socialMedia.scrollIntoView().should("be.visible", { timeout: 15000 });
+    mainPage.socialMedia.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 15000 });
 
     mainPage.X.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 
@@ -161,7 +163,7 @@ describe("telnyx check", () => {
   });
 
   it("check Facebook redirecting", () => {
-    mainPage.socialMedia.scrollIntoView().should("be.visible", { timeout: 15000 });
+    mainPage.socialMedia.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 15000 });
 
     mainPage.fB.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 

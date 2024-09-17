@@ -28,8 +28,8 @@ module.exports = defineConfig({
   video: false,                     // default false
   viewportHeight: 1000,            // default 660
   viewportWidth: 1500,           // default 1200
-  // retries: 1,
-  defaultCommandTimeout: 5000,   // default 4000
+  retries: 3,
+  defaultCommandTimeout: 10000,   // default 4000
   requestTimeout: 10000,         // default 5000
   responseTimeout: 30000,         // default 30000
   // watchForFileChanges: false,
