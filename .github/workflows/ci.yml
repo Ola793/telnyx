@@ -1,4 +1,5 @@
 name: Cypress run
+
 on:
   push:
     branches:
