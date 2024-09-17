@@ -12,17 +12,16 @@ on:
 jobs:
   cypress:
     runs-on: ubuntu-latest
+    env:
+      EMAIL_FOR_SIGNUP: ${{ secrets.EMAIL_FOR_SIGNUP }}
+      PASSWORD_FOR_SIGNUP: ${{ secrets.PASSWORD_FOR_SIGNUP}}
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
     steps:
       - name: Get project code
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm i --force
-      - name: Set up environment variables for Cypress
-        run: |
-          echo "CYPRESS_EMAIL_FOR_SIGNUP=${{ secrets.EMAIL_FOR_SIGNUP }}" >> $GITHUB_ENV
-          echo "CYPRESS_PASSWORD_FOR_SIGNUP=${{ secrets.PASSWORD_FOR_SIGNUP }}" >> $GITHUB_ENV
-          echo "CYPRESS_EMAIL=${{ secrets.EMAIL }}" >> $GITHUB_ENV
-          echo "CYPRESS_PASSWORD=${{ secrets.PASSWORD }}" >> $GITHUB_ENV
       - name: Run server and test
         run: npm run cy:run:server
       - name: Create report
