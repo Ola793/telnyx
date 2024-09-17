@@ -13,8 +13,8 @@
     "report:html": "npx marge mochawesome-report\\mochawesome.json",
     "report:all": "npm run reports:merge && npm run report:html",
     "reports:delete": "rmdir /S /Q cypress\\results && mkdir cypress\\results && rmdir /S /Q mochawesome-report",
-    "cy:run:report": "npm run reports:delete && npm run cy:e2e-tests && npm run report:all",
-    "cy:run:server": "start-test start http-get://localhost:4200/ cy:run:report"
+    "cy:run:report": "npm run reports:delete && npx cypress run --config baseUrl=https://telnyx.com -s 'cypress/e2e/*.spec.js' --browser chrome && npm run report:all",
+    "cy:run:server": "npm run cy:run:report"
   },
   "mocha": {
     "reporter": "mochawesome",
