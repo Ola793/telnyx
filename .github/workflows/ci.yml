@@ -20,7 +20,7 @@ jobs:
       - name: Run server and test
         run: npm run cy:run:server
       - name: Create report
-        if: success() || failure()
+        if: always()
         run: npm run report:all
       - name: Upload report
         if: always()
