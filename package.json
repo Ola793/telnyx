@@ -6,14 +6,15 @@
   "type": "module",
   "scripts": {
     "start": "run-script-os",
+    "test": "ng test",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "cy:e2e-tests": "npx cypress run -s 'cypress/e2e/*.spec.js' --browser chrome",
-    "reports:merge": "npx mochawesome-merge 'cypress/results/*.json' -o 'mochawesome-report\\mochawesome.json'",
-    "report:html": "npx marge mochawesome-report\\mochawesome.json",
+    "reports:merge": "npx mochawesome-merge 'cypress/results/*.json' -o 'mochawesome-report/mochawesome.json'",
+    "report:html": "npx marge mochawesome-report/mochawesome.json",
     "report:all": "npm run reports:merge && npm run report:html",
     "reports:delete": "rm -rf cypress/results && mkdir -p cypress/results && rm -rf mochawesome-report",
-    "cy:run:report": "npm run reports:delete && npx cypress run --config baseUrl=https://telnyx.com -s 'cypress/e2e/*.spec.js' --browser chrome && npm run report:all",
+    "cy:run:report": "npm run reports:delete && npm run cy:e2e-tests && npm run report:all",
     "cy:run:server": "npm run cy:run:report"
   },
   "mocha": {
