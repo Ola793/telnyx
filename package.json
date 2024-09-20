@@ -13,7 +13,7 @@
     "reports:merge": "npx mochawesome-merge 'cypress/results/*.json' -o 'mochawesome-report/mochawesome.json'",
     "report:html": "npx marge mochawesome-report/mochawesome.json",
     "report:all": "npm run reports:merge && npm run report:html",
-    "reports:delete": "rm -rf cypress/results && mkdir -p cypress/results && rm -rf mochawesome-report",
+    "reports:delete": "rmdir /S /Q cypress\\results && mkdir cypress\\results && rmdir /S /Q mochawesome-report",
     "cy:run:report": "npm run reports:delete && npm run cy:e2e-tests && npm run report:all",
     "cy:run:server": "npm run cy:run:report"
   },
@@ -38,6 +38,7 @@
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
     "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^6.0.1",
     "start-server-and-test": "^2.0.8"
   }
 }
