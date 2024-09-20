@@ -8,10 +8,12 @@ describe("telnyx check", () => {
   const signUpPage = new SignUpPage();
   const loginPage = new LoginPage();
   const homePage = new HomePage();
+
   const emailForSignUp = Cypress.env("emailForSignUp");
+  const passwordForSignUp = Cypress.env("passwordForSignUp");
+  
   const firstName = "Name";
   const lastName = "Surname";
-  const passwordForSignUp = Cypress.env("passwordForSignUp");
 
   const email = Cypress.env("email");
   const password = Cypress.env("password");
@@ -46,7 +48,7 @@ describe("telnyx check", () => {
     cy.wait(5000);
 
     signUpPage.lastStep.should("have.text", "One last step");
-  });
+  }); //recaptcha
 
   it.skip("log in check", () => {
     mainPage.loginButton.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
@@ -70,7 +72,7 @@ describe("telnyx check", () => {
     homePage.setUpLater.should("be.visible").should("have.text", "Set Up Later").click();
 
     homePage.welcomeTitle.should("be.visible").should("have.text", "Welcome to Telnyx!");
-  });
+  }); //recaptcha
 
   it.skip("log out check", () => {
     mainPage.loginButton.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
@@ -106,7 +108,7 @@ describe("telnyx check", () => {
     homePage.signOutLink.should("be.visible").click();
 
     loginPage.title.should("be.visible").should("have.text", "Log in");
-  });
+  }); //recaptcha
 
   it("password reset", () => {
     mainPage.loginButton.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();

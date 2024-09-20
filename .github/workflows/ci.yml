@@ -11,7 +11,7 @@ on:
 
 jobs:
   cypress:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       EMAIL_FOR_SIGNUP: ${{ secrets.EMAIL_FOR_SIGNUP }}
       PASSWORD_FOR_SIGNUP: ${{ secrets.PASSWORD_FOR_SIGNUP}}
