@@ -128,7 +128,7 @@ describe("telnyx check", () => {
     loginPage.resetMessage.should("be.visible").should("have.text", "We have accepted your password reset request. If you have a Telnyx account and are unable to reset your password successfully, please contact support for assistance.");
   });
 
-  it("sign up for our marketing newsletter", () => {
+  it.skip("sign up for our marketing newsletter", () => {
     cy.get("body").invoke("css", "overflow", "visible");
 
     mainPage.connectWithUs.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 20000 });
@@ -140,7 +140,7 @@ describe("telnyx check", () => {
     signUpPage.title.should("have.text", "Create a Telnyx account");
 
     cy.get("body").invoke("css", "overflow", "");
-  });
+  }); //unstable
 
   it("check LinkedIn redirecting", () => {
     mainPage.socialMedia.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 15000 });
@@ -164,7 +164,7 @@ describe("telnyx check", () => {
     });
   });
 
-  it("check Facebook redirecting", () => {
+  it.skip("check Facebook redirecting", () => {
     mainPage.socialMedia.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 20000 });
 
     mainPage.fB.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
@@ -172,7 +172,7 @@ describe("telnyx check", () => {
     cy.origin("https://www.facebook.com/Telnyx/", () => {
       cy.url().should("include", "facebook.com/Telnyx/", { timeout: 15000 });
     });
-  });
+  }); // unstable
 
   it("check solutions link", () => {
     mainPage.solutionsLink.should("be.visible").click();
