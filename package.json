@@ -15,7 +15,7 @@
     "report:all": "npm run reports:merge && npm run report:html",
     "reports:delete": "if exist cypress\\results (rmdir /S /Q cypress\\results) && mkdir cypress\\results && if exist mochawesome-report (rmdir /S /Q mochawesome-report)",
     "cy:run:report": "npm run reports:delete && npm run cy:e2e-tests && npm run report:all",
-    "cy:run:server": "npm run cy:run:report"
+    "cy:run:server": "npm run cy:run:report --headed"
   },
   "mocha": {
     "reporter": "mochawesome",
