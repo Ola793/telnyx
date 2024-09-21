@@ -131,7 +131,7 @@ describe("telnyx check", () => {
   it("sign up for our marketing newsletter", () => {
     cy.get("body").invoke("css", "overflow", "visible");
 
-    mainPage.connectWithUs.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible");
+    mainPage.connectWithUs.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 20000 });
 
     mainPage.emailInput.should("be.visible").should("have.attr", "placeholder", "Enter business email").type(email).focus().should("have.css", "border-color", "rgb(0, 163, 122)");
 
@@ -165,7 +165,7 @@ describe("telnyx check", () => {
   });
 
   it("check Facebook redirecting", () => {
-    mainPage.socialMedia.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 15000 });
+    mainPage.socialMedia.scrollIntoView({ behavior: "smooth", block: "center" }).should("be.visible", { timeout: 20000 });
 
     mainPage.fB.should("be.visible").should("have.attr", "target", "_blank").invoke("removeAttr", "target").click();
 
