@@ -1,20 +1,20 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 7,
+    "tests": 10,
     "passes": 7,
     "pending": 3,
-    "failures": -3,
+    "failures": 0,
+    "testsRegistered": 10,
+    "passPercent": 70,
+    "pendingPercent": 30,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
     "start": "2024-09-20T22:03:31.153Z",
     "end": "2024-09-20T22:08:40.458Z",
-    "duration": 309305,
-    "testsRegistered": 10,
-    "passPercent": 100,
-    "pendingPercent": 30,
-    "other": 3,
-    "hasOther": true,
-    "skipped": 0,
-    "hasSkipped": false
+    "duration": 309305
   },
   "results": [
     {
