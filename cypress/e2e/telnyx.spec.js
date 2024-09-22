@@ -1,7 +1,7 @@
-import { MainPage } from "../pages/main.page.spec.js";
-import { SignUpPage } from "../pages/sign-up.page.spec.js";
-import { LoginPage } from "../pages/login.page.spec.js";
-import { HomePage } from "../pages/home.page.spec.js";
+import { MainPage } from "../pages/main.page.js";
+import { SignUpPage } from "../pages/sign-up.page.js";
+import { LoginPage } from "../pages/login.page.js";
+import { HomePage } from "../pages/home.page.js";
 
 describe("telnyx check", () => {
   const mainPage = new MainPage();
